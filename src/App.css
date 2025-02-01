@@ -1,0 +1,21 @@
+.container1 {
+  background-color: #ffffff;
+  padding-left: 1% !important;
+  padding-right: 1%;
+}
+.container2 {
+  background-color: #eef7f0;
+}
+.outertopPadding{
+  padding-top: 1%;
+}
+.innerTopPadding{
+  padding-top: 3%;
+}
+.outerLeftPadding{
+  padding-left: 1%;
+}
+.listItem{
+  border: none !important;
+  padding: 0% !important;
+}
