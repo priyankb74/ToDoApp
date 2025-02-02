@@ -3,7 +3,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../App.css"
 import NavBar from "./Navbar"; 
-import List from './List';
+import FilterList from './FilterList';
+import AddTask from "./AddTask";
+import CreateList from "./CreateList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 
 
 function MainContainer() {
@@ -13,13 +17,22 @@ function MainContainer() {
                 <Col md={2} 
                     className="container1">
                     <Row className="innerTopPadding">
-                        <h2>To-Do</h2>
+                        <h2 className="mainHeader">
+                            <FontAwesomeIcon icon={faListCheck} className='iconStyle'/>
+                            To-Do
+                        </h2>
                     </Row>               
                     <Row className="innerTopPadding">
                         <NavBar />
                     </Row>
                     <Row className="innerTopPadding">
-                        <NavBar />
+                        <CreateList />
+                    </Row>
+                    <Row className="innerTopPadding">
+                        <FilterList />
+                    </Row>
+                    <Row className="innerTopPadding">
+                        <AddTask />
                     </Row>
                                      
                 </Col>

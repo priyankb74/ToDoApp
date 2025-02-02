@@ -1,17 +1,22 @@
 import ListGroup from 'react-bootstrap/ListGroup';
-import '../App.css'
+import '../App.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBriefcase, faLaptop, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 
 function List() {
     return(
-    <ListGroup className='custom-list'>
-      <ListGroup.Item className='listItem' action href="#link1">
-        Link 1
+    <ListGroup>
+      <ListGroup.Item className='listItem' action href="#work">
+      <FontAwesomeIcon icon={faBriefcase} className='iconStyle' />
+        Work
       </ListGroup.Item>
-      <ListGroup.Item className='listItem' action href="#link2">
-        Link 2
+      <ListGroup.Item className='listItem' action href="#personal">
+      <FontAwesomeIcon icon={faLaptop} className='iconStyle' />
+        Personal
       </ListGroup.Item>
-      <ListGroup.Item className='listItem' action href="#link3">
-        Link 3
+      <ListGroup.Item className='listItem' action href="#social">
+      <FontAwesomeIcon icon={faUserGroup} className='iconStyle' />
+        Social
       </ListGroup.Item>
     </ListGroup>
     );
