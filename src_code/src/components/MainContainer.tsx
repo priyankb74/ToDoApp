@@ -8,6 +8,8 @@ import AddTask from "./AddTask";
 import CreateList from "./CreateList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListCheck } from "@fortawesome/free-solid-svg-icons";
+import SearchBar from "./SearchBar";
+import Cards from "./Cards";
 
 
 function MainContainer() {
@@ -38,7 +40,22 @@ function MainContainer() {
                 </Col>
                 <Col md={5} 
                     className='container2'>
-                    
+                    <Row className="innerTopPadding">
+                        <SearchBar />
+                    </Row>
+                    <Row className="innerTopPadding">
+                        <h2 className="mainHeader">
+                            Work
+                        </h2> 
+                        <text className="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been the industry's standard.</text>
+                    </Row>
+                    <Row className="innerTopPadding">
+                        <Cards />
+                    </Row>
+                    <Row className="innerTopPadding">
+                        
+                    </Row>
                 </Col>
                 <Col md={5} 
                     className='container1'>

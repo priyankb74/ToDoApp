@@ -6,7 +6,7 @@ function AddTask() {
   return (
     <>
       <Button size='lg'>Add Task
-        <FontAwesomeIcon icon={faPlus} className='iconStyle' />
+        <FontAwesomeIcon icon={faPlus} />
       </Button>
     </>
   );
