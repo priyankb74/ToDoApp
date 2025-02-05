@@ -10,6 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 import SearchBar from "./SearchBar";
 import Cards from "./Cards";
+import CurrentUser from "./CurrentUser";
+import AddNotes from "./AddNotes";
+
 
 
 function MainContainer() {
@@ -53,13 +56,22 @@ function MainContainer() {
                     <Row className="innerTopPadding">
                         <Cards />
                     </Row>
-                    <Row className="innerTopPadding">
-                        
-                    </Row>
                 </Col>
                 <Col md={5} 
                     className='container1'>
-                    
+                    <Row className="innerTopPadding">
+                        <CurrentUser />
+                    </Row>
+                    <Row className="innerTopPadding">
+                        
+                    </Row>
+                    <Row className="innerTopPadding">
+                        
+                    </Row>
+                    <Row className="innerTopPadding">
+                        <AddNotes />
+                    </Row>
+
                 </Col>
             </Row>
         </Container>
