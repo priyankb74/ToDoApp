@@ -14,7 +14,6 @@ import CurrentUser from "./CurrentUser";
 import AddNotes from "./AddNotes";
 
 
-
 function MainContainer() {
     return (
         <Container fluid>

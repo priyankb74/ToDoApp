@@ -1,10 +1,26 @@
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 function Cards() {
+
+  interface Task {
+    task_id: string;
+    task_title: string;
+    task_desc: string;
+  }
+  
+  const [tasks, setTasks] = useState<Task[]>([]); // ✅ Now TypeScript knows the type
+  
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:5000/api/data')
+          .then(response => {
+          setTasks(response.data);
+        })
+    }, []);
+
   return (
     <div>
       <Card>
@@ -12,13 +28,15 @@ function Cards() {
           <div className="d-flex justify-content-end">
             <Badge bg="success">Active Task</Badge>
           </div>
-          <Card.Title>Send UI/UX presentation mail</Card.Title>
+          {tasks.map((item, index) => (
+          <Card.Title key={index}>{item.task_desc}</Card.Title>
+          ))}
           <Card.Text className='cardTextDesc'>
             20 Apr,2021
           </Card.Text>
         </Card.Body>
       </Card>
-      <br />
+      {/* <br />
       <Card>
         <Card.Body>
           <div className="d-flex justify-content-end">
@@ -41,7 +59,7 @@ function Cards() {
             8 July,2021
           </Card.Text>
         </Card.Body>
-      </Card>
+      </Card> */}
     </div>
     
   );
