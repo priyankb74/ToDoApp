@@ -19,12 +19,20 @@ def home():
     return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/api/data', methods=['GET'])
-def get_data():
+def get_todo_data():
     cursor = db.cursor(dictionary=True)  # Fetch results as dictionaries
     cursor.execute("SELECT * FROM todolist")
-    data = cursor.fetchall()
+    master_data = cursor.fetchall()
+    cursor.execute("SELECT * FROM todo_category")
+    category_data = cursor.fetchall()
+    cursor.execute("SELECT * FROM todo_status")
+    status_data = cursor.fetchall()
     cursor.close()
-    return jsonify(data)
+    return jsonify({
+        "todolist": master_data,
+        "todo_category": category_data,
+        "todo_status": status_data
+    })
 
 
 if __name__ == '__main__':
